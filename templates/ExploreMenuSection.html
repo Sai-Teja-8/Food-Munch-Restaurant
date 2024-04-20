@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/static/Food_Munch_Css_Styles/Food_Munch_Explore_Menu_Section.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="view-menu-outer-container d-flex flex-row justify-content-center p-5">
+                        <div>
+                            <img src="https://static.thenounproject.com/png/1404472-200.png" class="view-menu-cup-icon" />
+                        </div>
+                        <div>
+                            <h1 class="view-menu-heading">Stay Healthy | Stay Safe</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                    <div class="em-items-list shadow-lg"  onclick="location.href='{% url 'viewmenu Non-Veg Section' %}'">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-ginger-fried-img.png" class="vm-image"/>
+                        <h1 class="vm-details-heading mb-3">Non-Veg Starters</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                    <div class="em-items-list shadow-lg" onclick="location.href='{% url 'viewmenu Veg Section' %}'">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-veg-starters-img.png" class="vm-image" />
+                        <h1 class="vm-details-heading mb-3">Veg Starters</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                    <div class="em-items-list shadow-lg" onclick="location.href='{% url 'viewmenu Soups Section' %}'">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-soup-img.png" class="vm-image" />
+                        <h1 class="vm-details-heading mb-3">Soups</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                    <div class="em-items-list shadow-lg" onclick="location.href='{% url 'viewmenu Fish & Sea Food Section' %}'">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-grilled-seafood-img.png" class="vm-image" />
+                        <h1 class="vm-details-heading mb-3">Fish & Sea Foods</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                    <div class="em-items-list shadow-lg" onclick="location.href='{% url 'viewmenu Main Course Section' %}'">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-hyderabadi-biryani-img.png" class="vm-image" />
+                        <h1 class="vm-details-heading mb-3">Main Course</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                    <div class="em-items-list shadow-lg" onclick="location.href='{% url 'viewmenu Noodles Section' %}'">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-mushroom-noodles-img.png" class="vm-image" />
+                        <h1 class="vm-details-heading mb-3">Noodles</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                    <div class="em-items-list shadow-lg" onclick="location.href='{% url 'viewmenu Salads Section' %}'">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-gluten-img.png" class="vm-image" />
+                        <h1 class="vm-details-heading mb-3">Salads</h1>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                    <div class="em-items-list shadow-lg" onclick="location.href='{% url 'viewmenu Desserts Section' %}'">
+                        <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/em-coffee-bourbon-img.png" class="vm-image" />
+                        <h1 class="vm-details-heading mb-3">Desserts</h1>
+                    </div>
+                </div>
+                <button class="btn btn-outline-info mt-2 ml-3 mb-3" onclick="location.href='{% url 'RestrauntMainPage' UserId=UserId %}'">Back</button>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/static/Food_Munch_Css_Styles/LoginPage.css">
+    </head>
+    <body>
+        {% if ErrorFlag == True %}
+            {% for Error in ErrorMsgList %}
+                <div class="alert alert-danger" role="alert">
+                    {{Error}}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if ErrorFlag == False %}
+            <div class="alert alert-success" role="alert">
+                Created Account Successfully
+            </div>
+        {% endif %}
+        <div class="col-12 outer-form-container d-flex flex-column justify-content-center">
+            <div class="mt-3 mb-3">
+                <div class="form-list shadow-lg">
+                    <h1 class="main-container">Signup</h1>
+                    <form method="POST" action="{% url 'create account' %}">
+                        {% csrf_token %}
+                        <div class="form-container">
+                            <div>
+                                <label for="Customer-Name" class="form-heading mb-3">Customer Name <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXBlHGWGV0gXcdXkBHHLqUHVlSchZwZLylgyZrXLRjp8X2Ob4FGLHBwxKUQKFra1Vqx8k&usqp=CAU" alt="star-image" class="star-image"/></label>
+                                <input type="text" class="form-control mb-3" name="SignupCustomerName" id="Customer-Name" placeholder="Enter your Full Name" maxlength="50" autocomplete="off" Required>
+                            </div>
+                            <div>
+                                <label for="mobilenumber" class="form-heading mb-3">Mobile Number <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXBlHGWGV0gXcdXkBHHLqUHVlSchZwZLylgyZrXLRjp8X2Ob4FGLHBwxKUQKFra1Vqx8k&usqp=CAU" alt="star-image" class="star-image"/></label>
+                                <input type="text" class="form-control mb-3" name="SignupMobileNumber" id="mobilenumber" placeholder="Enter mobile number to continue" maxlength="10" autocomplete="off" Required>
+                            </div>
+                            <div>
+                                <label for="EmailId" class="form-heading mb-3">Email ID <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXBlHGWGV0gXcdXkBHHLqUHVlSchZwZLylgyZrXLRjp8X2Ob4FGLHBwxKUQKFra1Vqx8k&usqp=CAU" alt="star-image" class="star-image"/></label>
+                                <input type="text" class="form-control mb-3" name="SignupEmailId" id="EmailId" placeholder="Enter Email Id" autocomplete="off" Required>
+                            </div>
+                            <div>
+                                <label for="password1" class="form-heading mb-3">Password <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXBlHGWGV0gXcdXkBHHLqUHVlSchZwZLylgyZrXLRjp8X2Ob4FGLHBwxKUQKFra1Vqx8k&usqp=CAU" alt="star-image" class="star-image"/></label>
+                                <input type="password" class="form-control mb-3" name="SignupPassword1" id="password1" placeholder="Enter your password" maxlength="50" autocomplete="off" Required>
+                            </div>
+                            <div>
+                                <label for="password2" class="form-heading mb-3">Conform Password <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXBlHGWGV0gXcdXkBHHLqUHVlSchZwZLylgyZrXLRjp8X2Ob4FGLHBwxKUQKFra1Vqx8k&usqp=CAU" alt="star-image" class="star-image"/></label>
+                                <input type="password" class="form-control mb-3" name="SignupPassword2" id="password2" placeholder="Re Enter Password" maxlength="50" autocomplete="off" Required>
+                            </div>
+                            <div class="button-container">
+                                <button type="submit" class="login-button btn btn-info">Signup</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="outer-container">
+                        <h1 class="form-heading"><a href="{% url 'login' %}">Back</a></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

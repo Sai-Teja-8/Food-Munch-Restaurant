@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/static/Food_Munch_Css_Styles/Success_Page.css">
+    </head>
+    <body>
+        <div class="d-flex flex-row justify-content-center mt-5 mb-2" id="payment_gateway">
+            <div>
+                <img src="https://media1.tenor.com/m/-n8JvVIqBXkAAAAC/dddd.gif" id="payment_image" alt="gift" class="buffer-image mb-4" />
+                <h1 class="heading" id ="payment_heading">processing your payment please wait!!!</h1>
+                <div class="ml-5 mt-4">
+                    <button type="button" id="button_redirect" class="btn btn-outline-info" onclick="location.href='{% url 'RestrauntMainPage' UserId=UserId %}'">Go to Main Menu</button>
+                </div>
+            </div>
+            <script type="text/javascript">
+                let Count = 1000
+                let UniqueId = null;
+                UniqueId = setInterval(function() {
+                    Count = Count - 1
+                    if (Count === 0) {
+                        document.getElementById("payment_image").style.display = "none";
+                        document.getElementById("payment_heading").textContent="Payment Successful!. Order Placed"
+                        document.getElementById("payment_heading").style.color = "green";
+                        document.getElementById("button_redirect").style.display = "";
+                        clearInterval(UniqueId);
+                    } else if (Count > 0) {
+                        document.getElementById("button_redirect").style.display = "none";
+                    }
+                }, 1);
+            </script>
+        </div>
+    </body>
+</html>

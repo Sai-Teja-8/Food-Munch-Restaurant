@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/static/Food_Munch_Css_Styles/Food_Munch_View_Menu_Section.css/">
+    </head>
+    <body>
+        {% load static %}
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="view-menu-outer-container d-flex flex-row justify-content-center p-5">
+                        <div>
+                            <img src="https://static.thenounproject.com/png/1404472-200.png" class="view-menu-cup-icon" />
+                        </div>
+                        <div>
+                            <h1 class="view-menu-heading">{{FoodItem}}</h1>
+                        </div>
+                    </div>
+                    <div class="mt-3 mb-3">
+                        <h1 class="vm-section-item-names">{{FoodItem}}</h1>
+                    </div>
+                </div>
+                {% if UniqueId == "UI80001" %}
+                    {% for Image,Name,Cost in ItemDetails %}
+                        <div class="col-12 col-md-6 col-lg-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                            <div class="em-items-list shadow-lg">
+                                <img src="{% static 'Non-veg_Items_Images/' %}{{ Image }}.jpg" alt="{{ Name }}" class="vm-image">
+                                <h1 class="vm-details-heading">{{Name}}</h1>
+                                <p class="vm-details-para">{{Cost}}</p>
+                                <button class="btn btn-outline-success ml-3 mb-5" onclick="location.href='{% url 'paymentgateway' %}?ItemName={{Name}}&Cost={{Cost}}&Image={{Image}}&SectionName={{SectionName}}'">Order Now</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% elif UniqueId == "UI80002" %}
+                    {% for Image,Name,Cost in ItemDetails %}
+                            <div class="col-12 col-md-6 col-lg-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                                <div class="em-items-list shadow-lg">
+                                    <img src="{% static 'Veg_Items_Images/' %}{{ Image }}.jpg" alt="{{ Name }}" class="vm-image">
+                                    <h1 class="vm-details-heading">{{Name}}</h1>
+                                    <p class="vm-details-para">{{Cost}}</p>
+                                    <button class="btn btn-outline-success ml-3 mb-5" onclick="location.href='{% url 'paymentgateway' %}?ItemName={{Name}}&Cost={{Cost}}&Image={{Image}}&SectionName={{SectionName}}'">Order Now</button>
+                                </div>
+                            </div>
+                        {% endfor %}
+                {% elif UniqueId == "UI80003" %}
+                    {% for Image,Name,Cost in ItemDetails %}
+                            <div class="col-12 col-md-6 col-lg-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                                <div class="em-items-list shadow-lg">
+                                    <img src="{% static 'Soups_Images/' %}{{ Image }}.jpg" alt="{{ Name }}" class="vm-image">
+                                    <h1 class="vm-details-heading">{{Name}}</h1>
+                                    <p class="vm-details-para">{{Cost}}</p>
+                                    <button class="btn btn-outline-success ml-3 mb-5" onclick="location.href='{% url 'paymentgateway' %}?ItemName={{Name}}&Cost={{Cost}}&Image={{Image}}&SectionName={{SectionName}}'">Order Now</button>
+                                </div>
+                            </div>
+                        {% endfor %}
+                {% elif UniqueId == "UI80004" %}
+                    {% for Image,Name,Cost in ItemDetails %}
+                        <div class="col-12 col-md-6 col-lg-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                            <div class="em-items-list shadow-lg">
+                                <img src="{% static 'Fish_&_Sea_Food_Images/' %}{{ Image }}.jpg" alt="{{ Name }}" class="vm-image">
+                                <h1 class="vm-details-heading">{{Name}}</h1>
+                                <p class="vm-details-para">{{Cost}}</p>
+                                <button class="btn btn-outline-success ml-3 mb-5" onclick="location.href='{% url 'paymentgateway' %}?ItemName={{Name}}&Cost={{Cost}}&Image={{Image}}&SectionName={{SectionName}}'">Order Now</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% elif UniqueId == "UI80005" %}
+                    {% for Image,Name,Cost in ItemDetails %}
+                        <div class="col-12 col-md-6 col-lg-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                            <div class="em-items-list shadow-lg">
+                                <img src="{% static 'Main_Course_Images/' %}{{ Image }}.jpg" alt="{{ Name }}" class="vm-image">
+                                <h1 class="vm-details-heading">{{Name}}</h1>
+                                <p class="vm-details-para">{{Cost}}</p>
+                                <button class="btn btn-outline-success ml-3 mb-5" onclick="location.href='{% url 'paymentgateway' %}?ItemName={{Name}}&Cost={{Cost}}&Image={{Image}}&SectionName={{SectionName}}'">Order Now</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% elif UniqueId == "UI80006" %}
+                    {% for Image,Name,Cost in ItemDetails %}
+                        <div class="col-12 col-md-6 col-lg-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                            <div class="em-items-list shadow-lg">
+                                <img src="{% static 'Noodles_Images/' %}{{ Image }}.jpg" alt="{{ Name }}" class="vm-image">
+                                <h1 class="vm-details-heading">{{Name}}</h1>
+                                <p class="vm-details-para">{{Cost}}</p>
+                                <button class="btn btn-outline-success ml-3 mb-5" onclick="location.href='{% url 'paymentgateway' %}?ItemName={{Name}}&Cost={{Cost}}&Image={{Image}}&SectionName={{SectionName}}'">Order Now</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% elif UniqueId == "UI80007" %}
+                    {% for Image,Name,Cost in ItemDetails %}
+                        <div class="col-12 col-md-6 col-lg-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                            <div class="em-items-list shadow-lg">
+                                <img src="{% static 'Salads_Images/' %}{{ Image }}.jpg" alt="{{ Name }}" class="vm-image">
+                                <h1 class="vm-details-heading">{{Name}}</h1>
+                                <p class="vm-details-para">{{Cost}}</p>
+                                <button class="btn btn-outline-success ml-3 mb-5" onclick="location.href='{% url 'paymentgateway' %}?ItemName={{Name}}&Cost={{Cost}}&Image={{Image}}&SectionName={{SectionName}}'">Order Now</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    {% for Image,Name,Cost in ItemDetails %}
+                        <div class="col-12 col-md-6 col-lg-3 d-flex flex-row justify-content-center mt-3 mb-3">
+                            <div class="em-items-list shadow-lg">
+                                <img src="{% static 'Desserts_Images/' %}{{ Image }}.jpg" alt="{{ Name }}" class="vm-image">
+                                <h1 class="vm-details-heading">{{Name}}</h1>
+                                <p class="vm-details-para">{{Cost}}</p>
+                                <button class="btn btn-outline-success ml-3 mb-5" onclick="location.href='{% url 'paymentgateway' %}?ItemName={{Name}}&Cost={{Cost}}&Image={{Image}}&SectionName={{SectionName}}'">Order Now</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <button class="btn btn-outline-primary ml-3 mb-3" onclick="location.href='{% url 'exploremenu' %}'">Back</button>
+            </div>
+        </div>
+    </body>
+</html>
