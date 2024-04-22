@@ -27,7 +27,6 @@ def login(request):
             NewUser.save()
             UserId=request.session["user_id"]
             return redirect(reverse("RestrauntMainPage", kwargs={"UserId": UserId}))
-            #return render(request,"BasicRestrauntStructure.html")
         else:
             ErrorFlag=True
             ErrorMsgList.append("Invalid mobile number or password")
