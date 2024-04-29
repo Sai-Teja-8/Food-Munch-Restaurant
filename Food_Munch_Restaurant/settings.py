@@ -76,9 +76,13 @@ WSGI_APPLICATION = 'Food_Munch_Restaurant.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default':{
+        "ENGINE":"django.db.backends.mysql",
+        "NAME":"food_munch_restaurant",
+        "USER":"root",
+        "PASSWORD":"Saiteja@08",
+        "HOST":"localhost",
+        "PORT":"3306",
     }
 }
 
